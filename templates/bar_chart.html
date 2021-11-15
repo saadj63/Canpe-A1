@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <p>}</p>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+  </head>
+  <body>
+    <div id="barchart_material" style="width: 900px; height: 500px"></div>
+
+    <table id="myTable">
+      <thead>
+        <tr>
+          <th>State</th>
+          <th>Loan Amount</th>
+          <th>Amount Reccoverd</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in data %}
+        <tr>
+          <td id="state">{{row[0]}}</td>
+          <td id="amt">{{row[1]}}</td>
+          <td id="loan">{{row[2]}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
+<!--
+
+
+     let result = [];
+        table = document.getElementById("myTable");
+        for (rw = 1; rw < table.rows.length; rw++) {
+          for (i = 0; i < 3; i++) {
+            result.push(table.rows[rw].cells[i].innerHTML);
+          }
+        }
+        var rs;
+        var myJsonString;
+        function splitIntoChunk(arr, chunk) {
+          for (i = 0; i < arr.length; i += chunk) {
+            let tempArray;
+            tempArray = arr.slice(i, i + chunk);
+            myJsonString = myJsonString + " ," + JSON.stringify(tempArray);
+          }
+        }
+
+        const array = result;
+        const chunk = 3;
+        splitIntoChunk(array, chunk);
+        var str = myJsonString.substring(11);
+        console.log(str);
+-->
